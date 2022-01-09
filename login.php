@@ -39,6 +39,7 @@ if(isset($_SESSION['user_status'])){
                        </div>
                             <div>
                                 <button type="submit" class="btn btn-primary mt-3">login</button>
+                                <button type="reset" class="btn btn-primary mt-3">Reset</button>
                             </div>
 
                     </form>

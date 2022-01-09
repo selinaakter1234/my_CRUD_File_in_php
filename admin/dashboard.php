@@ -15,7 +15,6 @@ $from_db = mysqli_query($db_connect, $get_query);
 // print_r($after_assoc);
 ?>
 
-
 <section>
 
     <div class="container">

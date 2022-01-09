@@ -6,7 +6,6 @@ session_start();
 }
 ?>
 
-
 <div class="container">
   <div class="row">
     <div class="col-lg-6 m-auto">
@@ -79,6 +78,7 @@ session_start();
             
             <div>
             <button type="submit" class="btn btn-primary mt-3">Sign in</button>
+            <button type="reset" class="btn btn-primary mt-3">Reset</button>
             </div>
             
           </form>
