@@ -17,7 +17,7 @@ $from_db = mysqli_query($db_connect, $get_query);
 
 <section>
 
-    <div class="container">
+ <div class="container">
         <div class="row">
             <div class="col-lg-10 m-auto">
                 <div class="card mt-3">

@@ -45,15 +45,12 @@ session_start();
           }
           ?>
 
-        <!-- sdasfas -->
-          
-
 
           <form action="register_post.php" method="POST">
 
             <div class="row">
               <div>
-                <h1>this is unnese</h1>
+                
                 <label for="inputname">Your name</label>
                 <input type="text" class="form-control" id="inputname" placeholder="Enter your First name" name="user_name">
               </div>

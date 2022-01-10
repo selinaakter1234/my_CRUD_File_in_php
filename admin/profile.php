@@ -13,8 +13,7 @@ $after_assoc = mysqli_fetch_assoc($db_result);
   header('location: ../login.php');
 }
 ?>
-
- <section>
+<section>
      <div class="container">
          <div class="row">
              <div class="col-lg-8 m-auto">
@@ -24,9 +23,9 @@ $after_assoc = mysqli_fetch_assoc($db_result);
                         </h5>
                  </div>
                 <div class="card-body">
-                    <p> <span class="text-primary text-capitalize me-2">name:</span> <?=$after_assoc['user_name'] ?> </p>
-                    <p> <span class="text-primary text-capitalize me-2">email:</span> <?=$after_assoc['email'] ?> </p>
-                    <p> <span class="text-primary text-capitalize me-2">phone:</span> <?=$after_assoc['phone'] ?> </p>
+                    <p> <span class="text-primary text-capitalize me-2">name:</span>  <?=$after_assoc['user_name'] ?> </p>
+                    <p> <span class="text-primary text-capitalize me-2">email:</span> <?=$after_assoc['email'] ?>     </p>
+                    <p> <span class="text-primary text-capitalize me-2">phone:</span> <?=$after_assoc['phone'] ?>     </p>
 
                 </div>
              </div>

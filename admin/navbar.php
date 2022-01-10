@@ -18,7 +18,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="profile.php">Profile</a></li>
-            <li><a class="dropdown-item" href="#">contact</a></li>
+            <li><a class="dropdown-item" href="change_password.php">change password</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item text-danger"  href="../logout.php">logout</a></li>
           </ul>
