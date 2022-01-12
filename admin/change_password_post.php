@@ -3,7 +3,7 @@
 session_start();
 require_once '../db.php';
 
-//$login_email= $_SESSION['email'];
+$login_email= $_SESSION['email'];
 
 if($_POST['old_pass'] == NULL || $_POST['new_pass'] == NULL || $_POST['confirm_pass'] == NULL ){
     $_SESSION['pass_change_err']="all filled required !";
@@ -31,8 +31,13 @@ if ( $pass_cap == 1 && $pass_small == 1 && $pass_num == 1  && $pass_char == 1) {
     $checking_query = "SELECT COUNT(*) AS total_user FROM users WHERE email='$login_email' AND password='$encrypted_old_password' ";
     $db_result = mysqli_query($db_connect, $checking_query);
     $after_assoc = mysqli_fetch_assoc($db_result);
+
+    $new_pass= $_POST['new_pass'];
+    $encrypted_new_password = md5($new_pass);
+  
+
     if($after_assoc['total_user'] == 1){
-          $update_query = " UPDATE users SET password=' $encrypted_old_password' WHERE email='$login_email' ";
+          $update_query = " UPDATE users SET password = '$encrypted_new_password' WHERE email='$login_email' ";
              mysqli_query($db_connect,$update_query);
              $_SESSION['pass_change_ok']="password change successfull";
             header('location: change_password.php');
@@ -41,7 +46,6 @@ if ( $pass_cap == 1 && $pass_small == 1 && $pass_num == 1  && $pass_char == 1) {
     else{
         $_SESSION['pass_change_err']="old password did not match";
     header('location: change_password.php');
-// mile na..............................................................................................................................................
     }
 
 

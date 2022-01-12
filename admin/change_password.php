@@ -3,15 +3,11 @@ session_start();
  require_once('../header.php');
  require_once('../db.php');
  require_once('navbar.php');
-// $login_email= $_SESSION['email'];
-// $get_query = "SELECT user_name,email,phone FROM users WHERE email= '$login_email'";
-// $db_result = mysqli_query($db_connect,$get_query);
-// $after_assoc = mysqli_fetch_assoc($db_result);
 
-
- if(!isset($_SESSION['user_status'])){
+if(!isset($_SESSION['user_status'])){
   header('location: ../login.php');
 }
+
 ?>
 <section>
      <div class="container">

@@ -12,7 +12,8 @@ $db_connect = mysqli_connect($db_host_name, $db_user_name, $db_password, $db_nam
 //information from form
 
 $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-$password = md5($_POST['password']);
+ $password = md5($_POST['password']);
+//  $password = ($_POST['password']);
 
 
 $checking_query = "SELECT COUNT(*) AS total_users FROM users WHERE email='$email' AND password='$password' ";
