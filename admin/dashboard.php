@@ -25,7 +25,7 @@ $from_db = mysqli_query($db_connect, $get_query);
                         <h4>all user informations </h4>
                     </div>
                     <div class="card-body">
-                    <table class="table table-success table-bordered table-striped">
+                <table class="table table-success table-bordered table-striped">
                     <thead>
                      <tr>
                          <th scope="col">ID</th>
@@ -51,7 +51,7 @@ $from_db = mysqli_query($db_connect, $get_query);
                         ?>  
                     </tbody>
 
-               </table>
+                </table>
 
                     </div>
                 </div>

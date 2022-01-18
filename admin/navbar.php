@@ -17,9 +17,17 @@
               frontend
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="guest_msg.php">guest message <span class="badge bg-secondary">4</span> </a></li>
+            <li><a class="dropdown-item" href="guest_message.php">
+              <?php
+              require_once '../db.php';
+              $get_message_notification_query = " SELECT COUNT(*) AS message_notification FROM guest_messages WHERE read_status=1";
+              $from_db = mysqli_query($db_connect,$get_message_notification_query);
+              $after_Assoc = mysqli_fetch_assoc($from_db);
+              ?>
+              
+            guest message <span class="badge bg-secondary"> <?=$after_Assoc['message_notification']?></span> </a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item"  href="../banner.php">banner</a></li>
+            <li><a class="dropdown-item"  href="banner.php">banner</a></li>
           </ul>
         </li>
       </ul>
