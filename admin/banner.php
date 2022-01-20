@@ -18,7 +18,7 @@ $from_db = mysqli_query($db_connect, $get_query);
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 m-auto">
+            <div class="col-lg-3">
                 <div class="card mt-3">
                     <div class="card-header bg-success text-white text-center">
                         <h4>Add banner </h4>
@@ -72,12 +72,12 @@ $from_db = mysqli_query($db_connect, $get_query);
                                 ?>
 
                                     <tr>
-                                        <td><?= $banner['banner_sub_title'] ?></td>
-                                        <td><?= $banner['banner_title'] ?></td>
-                                        <td><?= $banner['banner_detail'] ?></td>
+                                        <td><?= $banner['banner_sub_title'] ?> </td>
+                                        <td><?= $banner['banner_title'] ?> </td>
+                                        <td><?= $banner['banner_detail']?> </td>
 
                                         <td>
-                                            <img src="../<?= $banner['image_location'] ?>" alt="" style="width=100px;">
+                                            <img src="../<?=$banner['image_location'] ?>" alt="" style="width:100px;">
 
                                         </td>
 
@@ -98,11 +98,20 @@ $from_db = mysqli_query($db_connect, $get_query);
 
                                         <td>
                                             <div class="btn-group" role="group" aria-label="basic example">
-                                                <button type="button" class="btn btn-sm btn-warning">make active</button>
-                                                <button type="button" class="btn btn-sm btn-info">edit</button>
-                                                <button type="button" class="btn btn-sm btn-primary">delete</button>
-
-
+                                            <?php
+                                            if ($banner['active_status'] == 1) :
+                                            ?>
+                                                 <a href="banner_deactive.php?banner_id=<?= $banner['id'] ?>"  class="btn btn-sm btn-warning m-2 border border-3 rounded-pill">make de-active</a>
+                                            <?php
+                                            else :
+                                            ?>
+                                                 <a href="banner_active.php?banner_id=<?= $banner['id'] ?>"  class="btn btn-sm btn-primary m-2 border border-3 rounded-pill">make active</a>
+                                            <?php
+                                            endif
+                                            ?>                                              
+                                               
+                                                <a href="banner_edit.php?banner_id=<?= $banner['id'] ?>"  class="btn btn-sm btn-info m-2 border border-3 rounded-pill">edit</a>
+                                                <a href="banner_delete.php?banner_id=<?= $banner['id'] ?>"  class="btn btn-sm btn-primary m-2 border border-3 rounded-pill">delete</a>
                                             </div>
 
 
