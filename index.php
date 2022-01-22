@@ -234,17 +234,26 @@ https://templatemo.com/tm-545-finance-business
         </div>
       </div>
     </div>
-
+<!-- fun-fact  -->
     <div class="fun-facts">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <div class="left-content">
-              <span>Lorem ipsum dolor sit amet</span>
-              <h2>Our solutions for your <em>business growth</em></h2>
-              <p>Pellentesque ultrices at turpis in vestibulum. Aenean pretium elit nec congue elementum. Nulla luctus laoreet porta. Maecenas at nisi tempus, porta metus vitae, faucibus augue. 
-              <br><br>Fusce et venenatis ex. Quisque varius, velit quis dictum sagittis, odio velit molestie nunc, ut posuere ante tortor ut neque.</p>
+              <?php
+              $get_query = "SELECT * FROM funfacts WHERE active_status=1 limit 1";
+              $from_db = mysqli_query($db_connect, $get_query);
+
+              foreach($from_db as $funfact_head):
+              ?>
+              <span><?=$funfact_head['sub_head']?></span>
+              <h2><?=$funfact_head['white_head']?> <em><?=$funfact_head['green_head']?></em></h2>
+              <p><?=$funfact_head['para_one']?> 
+              <br><br><?=$funfact_head['para_two']?></p>
               <a href="" class="filled-button">Read More</a>
+              <?php
+              endforeach
+              ?>
             </div>
           </div>
           <div class="col-md-6 align-self-center">
@@ -278,6 +287,7 @@ https://templatemo.com/tm-545-finance-business
         </div>
       </div>
     </div>
+    <!-- fun-fact  -->
 
     <div class="more-info" id="about">
       <div class="container">

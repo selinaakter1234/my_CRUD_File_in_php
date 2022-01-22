@@ -32,6 +32,8 @@
             <li><a class="dropdown-item"  href="service_head.php">Service heading</a></li>
             <li><a class="dropdown-item"  href="service_item.php">Service item</a></li>
             <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item"  href="funfact.php">fun fact</a></li>
+            <li><hr class="dropdown-divider"></li>
           </ul>
         </li>
       </ul>
