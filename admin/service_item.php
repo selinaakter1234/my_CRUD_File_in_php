@@ -91,7 +91,7 @@ $after_Assoc = mysqli_fetch_assoc($from_db);
                                         </td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="basic example">
-                                                <a href="service_item_edit.php?service_item_id=<?= $service['id'] ?>" class="btn btn-sm btn-info m-2 d-flex align-items-center border border-3 rounded-pill">edit</a>
+
                                                 <a href="service_item_delete.php?service_item_id=<?= $service['id'] ?>" class="btn btn-sm btn-danger m-2 d-flex align-items-center border border-3 rounded-pill">delete</a>
                                             </div>
                                         </td>
@@ -115,17 +115,6 @@ $after_Assoc = mysqli_fetch_assoc($from_db);
         </div>
     </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
 
 <?php
 require_once '../footer.php';
