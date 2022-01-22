@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_status'])) {
 }
 $get_query = "SELECT * FROM service_heads";
 $from_db = mysqli_query($db_connect, $get_query);
-$after_Assoc = mysqli_fetch_assoc($from_db);
+//$after_Assoc = mysqli_fetch_assoc($from_db);
 
 ?>
 
@@ -59,13 +59,42 @@ $after_Assoc = mysqli_fetch_assoc($from_db);
                                 <th>black head</th>
                                 <th>green head</th>
                                 <th>sub head</th>
+                                <th>active status</th>
+                                <th>action</th>
                             </thead>
                             <tbody>
-                                <td><?= $after_Assoc['black_head'] ?></td>
-                                <td><?= $after_Assoc['green_head'] ?></td>
-                                <td><?= $after_Assoc['service_sub_head'] ?></td>
+                                <?php foreach($from_db as $service_head): ?>
+                                <tr>
+                                <td><?= $service_head['black_head'] ?></td>
+                                <td><?= $service_head['green_head'] ?></td>
+                                <td><?= $service_head['service_sub_head']?></td>
+                                <td>
+                                
+                                <?php
+                                            if ($service_head['active_status'] == 1) :
+                                            ?>
+                                                <a href="service_head_deactive.php?service_head_id=<?= $service_head['id'] ?>"  class="btn btn-sm btn-success m-2 border border-3 rounded-pill">make de-active</a>
+                                            <?php
+                                            else :
+                                            ?>
+                                                <a href="service_head_active.php?service_head_id=<?= $service_head['id'] ?>"  class="btn btn-sm btn-warning m-2 border border-3 rounded-pill">make active</a>
+                                            <?php
+                                            endif
+                                            ?>
+
+                                </td>
+                                <td>
+                                            <div class="btn-group" role="group" aria-label="basic example">
+                                                <a href="service_head_edit.php?service_head_id=<?= $service_head['id'] ?>" class="btn btn-sm btn-info m-2 d-flex align-items-center border border-3 rounded-pill">edit</a>
+                                                <a href="service_head_delete.php?service_head_id=<?= $service_head['id'] ?>" class="btn btn-sm btn-danger m-2 d-flex align-items-center border border-3 rounded-pill">delete</a>
+                                            </div>
+                                 </td>
+                                </tr>
                                
                             </tbody>
+                            <?php 
+                            endforeach
+                            ?>
                         </table>
 
 

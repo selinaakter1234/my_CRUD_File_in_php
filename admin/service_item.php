@@ -59,39 +59,46 @@ $after_Assoc = mysqli_fetch_assoc($from_db);
                                 <th>service head</th>
                                 <th>service details</th>
                                 <th>service image</th>
-                                <th>active</th>
+                                <th>active status</th>
+                                <th>action</th>
                             </thead>
 
 
                             <tbody>
                                 <?php
-                                foreach ($from_db as $service):
+                                foreach ($from_db as $service) :
                                 ?>
-                                <tr>
-                                <td><?= $service['service_item_head'] ?></td>
-                                <td><?= $service['service_item_detail'] ?></td>
-                                
-                                <td><img src="../<?= $service['image_location'] ?>" alt="" style="width: 100px;"></td>
+                                    <tr>
+                                        <td><?= $service['service_item_head'] ?></td>
+                                        <td><?= $service['service_item_detail'] ?></td>
 
-                                
-                                <td>
+                                        <td><img src="../<?= $service['image_location'] ?>" alt="" style="width: 100px;"></td>
+
+
+                                        <td>
                                             <?php
                                             if ($service['active_status'] == 1) :
                                             ?>
-                                                <span class="badge badge-sm bg-success">active</span>
+                                                <a href="service_item_deactive.php?service_id=<?= $service['id'] ?>" class="btn btn-sm btn-success m-2 border border-3 rounded-pill">make de-active</a>
                                             <?php
                                             else :
                                             ?>
-                                                <span class="badge badge-sm bg-warning">de-active</span>
+                                                <a href="service_item_active.php?service_id=<?= $service['id'] ?>" class="btn btn-sm btn-warning m-2 border border-3 rounded-pill">make active</a>
                                             <?php
                                             endif
                                             ?>
 
-                                </td>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="basic example">
+                                                <a href="service_item_edit.php?service_item_id=<?= $service['id'] ?>" class="btn btn-sm btn-info m-2 d-flex align-items-center border border-3 rounded-pill">edit</a>
+                                                <a href="service_item_delete.php?service_item_id=<?= $service['id'] ?>" class="btn btn-sm btn-danger m-2 d-flex align-items-center border border-3 rounded-pill">delete</a>
+                                            </div>
+                                        </td>
 
 
 
-                                </tr>
+                                    </tr>
 
                                 <?php
                                 endforeach

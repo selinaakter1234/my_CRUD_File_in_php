@@ -77,16 +77,16 @@ https://templatemo.com/tm-545-finance-business
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-link" href="#about">About Us</a>
               </li>  
               <li class="nav-item">
-                <a class="nav-link" href="services.html">Our Services</a>
+                <a class="nav-link" href="#services">Our Services</a>
               </li>                          
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+                <a class="nav-link" href="#contact">Contact Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="one-page.html">One Page</a>
+                <a class="nav-link" href="#one-page">One Page</a>
               </li>
             </ul>
           </div>
@@ -163,7 +163,7 @@ https://templatemo.com/tm-545-finance-business
       </div>
     </div>
 
-    <div class="services">
+    <div class="services" id="services">
       <div class="container">
         <div class="row">
           <!-- service head  -->
@@ -273,7 +273,7 @@ https://templatemo.com/tm-545-finance-business
       </div>
     </div>
 
-    <div class="more-info">
+    <div class="more-info" id="about">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -353,7 +353,7 @@ https://templatemo.com/tm-545-finance-business
       </div>
     </div>
 <!-- call back form -->
-    <div class="callback-form">
+    <div class="callback-form" id="contact">
       <div class="container">
         <div class="row">
           <div class="col-md-12">

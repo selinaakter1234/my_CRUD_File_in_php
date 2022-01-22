@@ -112,8 +112,8 @@ $from_db = mysqli_query($db_connect, $get_query);
                                             endif
                                             ?>                                              
                                                
-                                                <a href="banner_edit.php?banner_id=<?= $banner['id'] ?>"  class="btn btn-sm btn-info m-2 border border-3 rounded-pill">edit</a>
-                                                <a href="banner_delete.php?banner_id=<?= $banner['id'] ?>"  class="btn btn-sm btn-danger m-2 border border-3 rounded-pill">delete</a>
+                                                <a href="banner_edit.php?banner_id=<?= $banner['id'] ?>"  class="btn btn-sm btn-info m-2 d-flex align-items-center border border-3 rounded-pill">edit</a>
+                                                <a href="banner_delete.php?banner_id=<?= $banner['id'] ?>"  class="btn btn-sm btn-danger m-2 d-flex align-items-center border border-3 rounded-pill">delete</a>
                                             </div>
 
 
