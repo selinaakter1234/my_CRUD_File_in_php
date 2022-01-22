@@ -62,7 +62,7 @@ $from_db = mysqli_query($db_connect, $get_query);
                                else:
                                ?> 
 
-                                   <a href="#"class="btn btn-sm btn-danger"> delete</a>
+                                   <a href="guest_message_delete.php?message_id= <?=$messages['id']?>"class="btn btn-sm btn-danger"> delete</a>
                                
                                <?php
                                  endif

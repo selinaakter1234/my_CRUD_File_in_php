@@ -73,7 +73,24 @@ $after_Assoc = mysqli_fetch_assoc($from_db);
                                 
                                 <td><img src="../<?= $service['image_location'] ?>" alt="" style="width: 100px;"></td>
 
-                                <td><?= $service['active_status'] ?></td>
+                                
+                                <td>
+                                            <?php
+                                            if ($service['active_status'] == 1) :
+                                            ?>
+                                                <span class="badge badge-sm bg-success">active</span>
+                                            <?php
+                                            else :
+                                            ?>
+                                                <span class="badge badge-sm bg-warning">de-active</span>
+                                            <?php
+                                            endif
+                                            ?>
+
+                                </td>
+
+
+
                                 </tr>
 
                                 <?php

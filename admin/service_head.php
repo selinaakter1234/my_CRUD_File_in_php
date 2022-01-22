@@ -64,6 +64,7 @@ $after_Assoc = mysqli_fetch_assoc($from_db);
                                 <td><?= $after_Assoc['black_head'] ?></td>
                                 <td><?= $after_Assoc['green_head'] ?></td>
                                 <td><?= $after_Assoc['service_sub_head'] ?></td>
+                               
                             </tbody>
                         </table>
 
