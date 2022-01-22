@@ -166,23 +166,46 @@ https://templatemo.com/tm-545-finance-business
     <div class="services">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
+          <!-- service head  -->
+        <div class="col-md-12">
+
+          <?php
+          $get_query = "SELECT * FROM service_heads";
+          $from_db = mysqli_query($db_connect, $get_query);
+          $after_Assoc = mysqli_fetch_assoc($from_db);
+          ?>
+
             <div class="section-heading">
-              <h2>Financial <em>Services</em></h2>
-              <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
+              <h2><?=$after_Assoc['black_head']?> <em><?=$after_Assoc['green_head']?></em></h2>
+              <span><?=$after_Assoc['service_sub_head']?></span>
             </div>
-          </div> 
+          </div>       
+           <!-- service head   -->
+           <?php
+          $get_query = "SELECT * FROM service_items WHERE active_status = 1 ORDER BY id DESC limit 3";
+          $from_db = mysqli_query($db_connect, $get_query);
+          foreach($from_db as $service_items):
+          ?>
           <div class="col-md-4">
+          
             <div class="service-item">
-              <img src="frontend/assets/images/service_01.jpg" alt="">
+
+              <img src="<?=$service_items['image_location']?>" alt="">
               <div class="down-content">
-                <h4>Digital Currency</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
+                <h4><?=$service_items['service_item_head']?></h4>
+                <p><?=$service_items['service_item_detail']?></p>
+                <a href="#" class="filled-button">Read More</a>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+
+         <?php
+         endforeach
+         ?>
+
+        
+
+          <!-- <div class="col-md-4">
             <div class="service-item">
               <img src="frontend/assets/images/service_02.jpg" alt="">
               <div class="down-content">
@@ -201,7 +224,7 @@ https://templatemo.com/tm-545-finance-business
                 <a href="" class="filled-button">Read More</a>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

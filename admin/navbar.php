@@ -28,6 +28,10 @@
             guest message <span class="badge bg-secondary"> <?=$after_Assoc['message_notification']?></span> </a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item"  href="banner.php">banner</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item"  href="service_head.php">Service heading</a></li>
+            <li><a class="dropdown-item"  href="service_item.php">Service heading</a></li>
+            <li><hr class="dropdown-divider"></li>
           </ul>
         </li>
       </ul>

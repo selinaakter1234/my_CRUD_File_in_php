@@ -59,6 +59,7 @@ $from_db = mysqli_query($db_connect, $get_query);
                     <div class="card-body">
                         <table class="table table-borderd">
                             <thead>
+                                <th>SL</th>
                                 <th>banner sub title </th>
                                 <th>banner title</th>
                                 <th>banner detail</th>
@@ -68,10 +69,11 @@ $from_db = mysqli_query($db_connect, $get_query);
                             </thead>
                             <tbody>
                                 <?php
-                                foreach ($from_db as $banner) :
+                                foreach ($from_db as $key => $banner) :
                                 ?>
 
                                     <tr>
+                                        <td><?=$key+1?> </td>
                                         <td><?= $banner['banner_sub_title'] ?> </td>
                                         <td><?= $banner['banner_title'] ?> </td>
                                         <td><?= $banner['banner_detail']?> </td>
@@ -111,7 +113,7 @@ $from_db = mysqli_query($db_connect, $get_query);
                                             ?>                                              
                                                
                                                 <a href="banner_edit.php?banner_id=<?= $banner['id'] ?>"  class="btn btn-sm btn-info m-2 border border-3 rounded-pill">edit</a>
-                                                <a href="banner_delete.php?banner_id=<?= $banner['id'] ?>"  class="btn btn-sm btn-primary m-2 border border-3 rounded-pill">delete</a>
+                                                <a href="banner_delete.php?banner_id=<?= $banner['id'] ?>"  class="btn btn-sm btn-danger m-2 border border-3 rounded-pill">delete</a>
                                             </div>
 
 
