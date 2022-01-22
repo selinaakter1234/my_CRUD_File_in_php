@@ -170,16 +170,22 @@ https://templatemo.com/tm-545-finance-business
         <div class="col-md-12">
 
           <?php
-          $get_query = "SELECT * FROM service_heads";
+          $get_query = "SELECT * FROM service_heads WHERE active_status=1 limit 1";
           $from_db = mysqli_query($db_connect, $get_query);
-          $after_Assoc = mysqli_fetch_assoc($from_db);
+          // $after_Assoc = mysqli_fetch_assoc($from_db);
           ?>
+          <div class="section-heading">
+          <?php foreach($from_db as $service_head): ?>
+              <h2><?=$service_head['black_head']?> <em><?=$service_head['green_head']?></em></h2>
+              <span><?=$service_head['service_sub_head']?></span>
 
-            <div class="section-heading">
-              <h2><?=$after_Assoc['black_head']?> <em><?=$after_Assoc['green_head']?></em></h2>
-              <span><?=$after_Assoc['service_sub_head']?></span>
+          <?php
+          endforeach
+          ?>    
             </div>
-          </div>       
+          </div>  
+          
+
            <!-- service head   -->
            <?php
           $get_query = "SELECT * FROM service_items WHERE active_status = 1 ORDER BY id DESC limit 3";
