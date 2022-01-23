@@ -62,7 +62,9 @@ $from_db = mysqli_query($db_connect, $get_query);
                                else:
                                ?> 
 
-                                   <a href="guest_message_delete.php?message_id= <?=$messages['id']?>"class="btn btn-sm btn-danger"> delete</a>
+                                   <!-- <a href="guest_message_delete.php?message_id= <?=$messages['id']?>"class="btn btn-sm btn-danger"> delete</a> -->
+                                   <!--  -->
+                                   <button value="guest_message_delete.php?message_id= <?=$messages['id']?>" class="del-btn btn btn-sm btn-danger"> delete   </button>
                                
                                <?php
                                  endif
@@ -87,8 +89,48 @@ $from_db = mysqli_query($db_connect, $get_query);
 
 </section>
 
-
-
 <?php
 require_once('../footer.php');
 ?>
+
+<script>
+    $('.del-btn').click(function(){
+        var link = $(this).val();  
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = link
+    //     Swal.fire(
+    //   'Deleted!',
+    //   'Your file has been deleted.',
+    //   'success'
+    // )
+  }
+})
+
+
+
+
+    });
+        //alert('hi');
+        
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
