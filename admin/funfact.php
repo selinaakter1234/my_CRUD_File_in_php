@@ -28,24 +28,54 @@ $from_db = mysqli_query($db_connect, $get_query);
                         <form action="funfact_post.php" method="POST">
                             <div class="mb-3">
                                 <label lass="">sub heading</label>
-                                <input type="text" class="form-control" name="sub_head">
+                                <input type="text" class="form-control" name="sub_head" value="<?=(isset($_SESSION['sub_head_done'])) ? $_SESSION['sub_head_done'] : '' ?>">
+                                 <?php  if(isset($_SESSION['sub_head_err'])): ?>
+                                    <small class="text-danger"><?=$_SESSION['sub_head_err']?></small>
+                                     <?php unset($_SESSION['sub_head_err']) ?>
+                                 <?php endif ?> 
                             </div>
+
+                        
                             <div class="mb-3">
                                 <label lass="">white heading</label>
-                                <input type="text" class="form-control" name="white_head">
+                                <input type="text" class="form-control" name="white_head" value="<?=(isset($_SESSION['white_head_done'])) ? $_SESSION['white_head_done'] : '' ?>">
+                                <?php  if(isset($_SESSION['white_head_err'])): ?>
+                                    <small class="text-danger"><?=$_SESSION['white_head_err']?></small>
+                                     <?php unset($_SESSION['white_head_err']) ?>
+                                 <?php endif ?>
                             </div>
+
+
                             <div class="mb-3">
                                 <label lass="">green heading</label>
-                                <input type="text" class="form-control" name="green_head">
+                                <input type="text" class="form-control" name="green_head" value="<?=(isset($_SESSION['green_head_done'])) ? $_SESSION['green_head_done'] : '' ?>">
+                                <?php  if(isset($_SESSION['green_head_err'])): ?>
+                                    <small class="text-danger"><?=$_SESSION['green_head_err']?></small>
+                                     <?php unset($_SESSION['green_head_err']) ?>
+                                 <?php endif ?>
                             </div>
+
+
                             <div class="mb-3">
                                 <label lass="">paragraph one</label>
-                                <input type="text" class="form-control" name="para_one">
+                                <input type="text" class="form-control" name="para_one" value="<?=(isset($_SESSION['para_one_done'])) ? $_SESSION['para_one_done'] : '' ?>">
+                                <?php  if(isset($_SESSION['para_one_err'])): ?>
+                                    <small class="text-danger"><?=$_SESSION['para_one_err']?></small>
+                                     <?php unset($_SESSION['para_one_err']) ?>
+                                 <?php endif ?>
                             </div>
+
+
                             <div class="mb-3">
                                 <label lass="">paragraph two</label>
-                                <input type="text" class="form-control" name="para_two">
+                                <input type="text" class="form-control" name="para_two" value="<?=(isset($_SESSION['para_two_done'])) ? $_SESSION['para_two_done'] : '' ?>">
+                                <?php  if(isset($_SESSION['para_two_err'])): ?>
+                                    <small class="text-danger"><?=$_SESSION['para_two_err']?></small>
+                                     <?php unset($_SESSION['para_two_err']) ?>
+                                 <?php endif ?>
                             </div>
+
+
                             <div class="mb-3">
                                 <button class="btn-success text-white border-0 rounded">add</button>
                             </div>
