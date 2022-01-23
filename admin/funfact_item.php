@@ -8,7 +8,7 @@ require_once('../db.php');
 if (!isset($_SESSION['user_status'])) {
     header('location: ../login.php');
 }
-$get_query = "SELECT * FROM funfacts";
+$get_query = "SELECT * FROM funfact_items";
 $from_db = mysqli_query($db_connect, $get_query);
 //$after_Assoc = mysqli_fetch_assoc($from_db);
 
@@ -21,31 +21,20 @@ $from_db = mysqli_query($db_connect, $get_query);
                 <div class="card mt-4">
                     <div class="card-header">
                         <h5 class="card-title text-success text-capitalize text-center">
-                            funfact heading add form
+                            funfact item add form
                         </h5>
                     </div>
                     <div class="card-body">
-                        <form action="funfact_post.php" method="POST">
+                        <form action="funfact_item_post.php" method="POST">
                             <div class="mb-3">
-                                <label lass="">sub heading</label>
-                                <input type="text" class="form-control" name="sub_head">
+                                <label lass="">fun number</label>
+                                <input type="text" class="form-control" name="fun_num">
                             </div>
                             <div class="mb-3">
-                                <label lass="">white heading</label>
-                                <input type="text" class="form-control" name="white_head">
+                                <label lass="">fun item heading</label>
+                                <input type="text" class="form-control" name="fun_item_head">
                             </div>
-                            <div class="mb-3">
-                                <label lass="">green heading</label>
-                                <input type="text" class="form-control" name="green_head">
-                            </div>
-                            <div class="mb-3">
-                                <label lass="">paragraph one</label>
-                                <input type="text" class="form-control" name="para_one">
-                            </div>
-                            <div class="mb-3">
-                                <label lass="">paragraph two</label>
-                                <input type="text" class="form-control" name="para_two">
-                            </div>
+
                             <div class="mb-3">
                                 <button class="btn-success text-white border-0 rounded">add</button>
                             </div>
@@ -58,38 +47,34 @@ $from_db = mysqli_query($db_connect, $get_query);
                 <div class="card mt-4">
                     <div class="card-header">
                         <h5 class="card-title text-success text-capitalize text-center">
-                            funfact head details
+                            funfact item details
                         </h5>
                     </div>
                     <div class="card-body">
                         <table class="table">
                             <thead>
-                                <th>sub head</th>
-                                <th>white head</th>
-                                <th>green head</th>
-                                <th>paragraph one</th>
-                                <th>paragraph two</th>
+                                <th>fun number</th>
+                                <th>fun item head</th>
+                                
                                 <th>active status</th>
                                 <th>action</th>
                             </thead>
                              <tbody>
                                 <?php foreach ($from_db as $funfact) : ?>
                                     <tr>
-                                        <td><?=$funfact['sub_head'] ?></td>
-                                        <td><?=$funfact['white_head']?></td>
-                                        <td><?=$funfact['green_head']?></td>
-                                        <td><?=$funfact['para_one'] ?></td>
-                                        <td><?=$funfact['para_two'] ?></td>
+                                        <td><?=$funfact['fun_num'] ?></td>
+                                        <td><?=$funfact['fun_item_head']?></td>
+                                        
                                         <td>
 
                                             <?php
                                             if ($funfact['active_status'] == 1) :
                                             ?>
-                                                <a href="funfact_deactive.php?funfact_head_id=<?= $funfact['id'] ?>" class="btn btn-sm btn-success m-2 border border-3 rounded-pill">make de-active</a>
+                                                <a href="funfact_item_deactive.php?funfact_head_id=<?= $funfact['id'] ?>" class="btn btn-sm btn-success m-2 border border-3 rounded-pill">make de-active</a>
                                             <?php
                                             else :
                                             ?>
-                                                <a href="funfact_active.php?funfact_head_id=<?= $funfact['id'] ?>" class="btn btn-sm btn-warning m-2 border border-3 rounded-pill">make active</a>
+                                                <a href="funfact_item_active.php?funfact_head_id=<?= $funfact['id'] ?>" class="btn btn-sm btn-warning m-2 border border-3 rounded-pill">make active</a>
                                             <?php
                                             endif
                                             ?>
@@ -98,7 +83,7 @@ $from_db = mysqli_query($db_connect, $get_query);
                                         <td>
                                             <div class="btn-group" role="group" aria-label="basic example">
 
-                                                <a href="funfact_delete.php?funfact_head_id=<?= $funfact['id'] ?>" class="btn btn-sm btn-danger m-2 d-flex align-items-center border border-3 rounded-pill">delete</a>
+                                                <a href="funfact_item_delete.php?funfact_head_id=<?= $funfact['id'] ?>" class="btn btn-sm btn-danger m-2 d-flex align-items-center border border-3 rounded-pill">delete</a>
                                             </div>
                                         </td>
                                     </tr>
