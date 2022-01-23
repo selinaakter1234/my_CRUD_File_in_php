@@ -55,6 +55,13 @@ if($flag){
    //  inser query 
 $insert_query = "INSERT INTO funfacts (sub_head,white_head,green_head,para_one,para_two) VALUES('$sub_head','$white_head','$green_head','$para_one','$para_two')";
 mysqli_query($db_connect,$insert_query);
+
+unset( $_SESSION['sub_head_done']);
+unset( $_SESSION['white_head_done']);
+unset( $_SESSION['green_head_done']);
+unset( $_SESSION['para_one_done']);
+unset( $_SESSION['para_two_done']);
+
 header('location: funfact.php');
    
 }
